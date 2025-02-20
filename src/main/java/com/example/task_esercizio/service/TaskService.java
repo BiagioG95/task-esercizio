@@ -24,10 +24,10 @@ public class TaskService {
     }
 
     //metodo per modificare una task
-    public Optional<Task> updateTask(Long id, boolean complete){
+    public Optional<Task> updateTaskCompletedStatus(Long id){
         Optional<Task> taskOptional = taskRepository.findById(id);
         if(taskOptional.isPresent()){
-            taskOptional.get().setCompleted(complete);
+            taskOptional.get().setCompleted(true);
             Task task = taskRepository.save(taskOptional.get());
             return Optional.of(task);
         } else {
