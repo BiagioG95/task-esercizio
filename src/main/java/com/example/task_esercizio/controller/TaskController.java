@@ -36,4 +36,9 @@ public class TaskController {
         }
 
     }
+
+    @DeleteMapping("/delete")
+    public Task deleteTask(@RequestBody Task task){
+        return taskService.deleteTask(task);
+    }
 }

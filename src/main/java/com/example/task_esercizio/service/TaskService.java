@@ -33,6 +33,12 @@ public class TaskService {
         } else {
             return Optional.empty();
         }
+    }
+
+    // metodo per cancellare una task
+    public Task deleteTask(Task task){
+        taskRepository.delete(task);
+        return task;
 
     }
 }
